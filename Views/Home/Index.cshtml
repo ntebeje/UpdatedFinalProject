@@ -1,0 +1,22 @@
+﻿@model HomeViewModel
+
+<h2>@Model.Title</h2>
+
+@foreach (var item in Model.Items)
+{
+	<div class="col-sm-4 col-lg-4 col-md-4">
+		<div class="thumbnail">
+			<img src="@item.ImageUrl" alt="" />
+			<div class="cpation">
+				
+				<h3>
+					<a asp-controller="Home" asp-action="Details"
+asp-route-id="@item.Id">@item.Name</a>
+				</h3>
+				<p>@item.Description</p>
+			</div>
+		</div>
+	</div>
+}
+
+

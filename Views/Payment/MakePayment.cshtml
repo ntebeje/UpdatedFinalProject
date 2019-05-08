@@ -1,0 +1,101 @@
+﻿@model Payment
+
+<form asp-action="MakePayment" method="post" class="form-horizontal" role="form">
+	<h4>Thank you for supporting Denver Debreselam Medhanealem Church.</h4>
+
+	<div asp-validation-summary="All" class="text-danger"></div>
+
+	<div class="form-group">
+		<label asp-for="FirstName" class="col-md-2 control-label"></label>
+		<div class="col-md-5">
+			<input asp-for="FirstName" class="form-control" />
+			<span asp-validation-for="FirstName" class="text-danger"></span>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label asp-for="LastName" class="col-md-2 control-label"></label>
+		<div class="col-md-5">
+			<input asp-for="LastName" class="form-control" />
+			<span asp-validation-for="LastName" class="text-danger"></span>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label asp-for="AddressLine1" class="col-md-2 control-label"></label>
+		<div class="col-md-5">
+			<input asp-for="AddressLine1" class="form-control" />
+			<span asp-validation-for="AddressLine1" class="text-danger"></span>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label asp-for="AddressLine2" class="col-md-2 control-label"></label>
+		<div class="col-md-5">
+			<input asp-for="AddressLine2" class="form-control" />
+			<span asp-validation-for="AddressLine2" class="text-danger"></span>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label asp-for="City" class="col-md-2 control-label"></label>
+		<div class="col-md-5">
+			<input asp-for="City" class="form-control" />
+			<span asp-validation-for="City" class="text-danger"></span>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label asp-for="State" class="col-md-2 control-label"></label>
+		<div class="col-md-5">
+			<input asp-for="State" class="form-control" />
+			<span asp-validation-for="State" class="text-danger"></span>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label asp-for="ZipCode" class="col-md-2 control-label"></label>
+		<div class="col-md-5">
+			<input asp-for="ZipCode" class="form-control" />
+			<span asp-validation-for="ZipCode" class="text-danger"></span>
+			<span asp-validation-for="ZipCode" class="text-danger"></span>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label asp-for="PhoneNumber" class="col-md-2 control-label"></label>
+		<div class="col-md-5">
+			<input asp-for="PhoneNumber" class="form-control" />
+			<span asp-validation-for="PhoneNumber" class="text-danger"></span>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label asp-for="PaymentType" class="col-md-2 control-label"></label>
+		<div class="col-md-5">
+			<select asp-for="PaymentType" class="form-control">
+				<option value="monthly">Monthly</option>
+				<option value="annual">Annual</option>
+				<option value="donation">Donation</option>
+				<option value="other">Other</option>
+			</select>
+			<span asp-validation-for="PaymentType" class="text-danger"></span>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label asp-for="PaymentAmount" class="col-md-2 control-label"></label>
+		<div class="col-md-5">
+			<input asp-for="PaymentAmount" class="form-control" />
+			<span asp-validation-for="PaymentAmount" class="text-danger"></span>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<div class="col-md-offset-2 col-md-5">
+			<input type="submit" class="btn btn-primary" value="Complete payment" />
+		</div>
+	</div>
+
+
+</form>

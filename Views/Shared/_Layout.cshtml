@@ -1,0 +1,54 @@
+﻿@using Microsoft.AspNetCore.Identity
+
+<!DOCTYPE html>
+
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+<html>
+<head>
+	<meta name="viewport" content="width=device-width" />
+	<link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+	<link rel="stylesheet" href="~/Content/site.css" />
+	<title>My Church</title>
+</head>
+<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li><a asp-controller="Home" asp-action="Index" class="navbar-brand">HOME</a></li>
+					<li><a asp-controller="Feedback" asp-action="Index">Feedback</a></li>
+					<li><a asp-controller="Payment" asp-action="MakePayment">Make a payment</a></li>
+					@if (SignInManager.IsSignedIn(User) && User.IsInRole("Administrators"))
+					{
+						@await Component.InvokeAsync("AdminMenu")
+
+					}
+				</ul>
+
+				@await Html.PartialAsync("LoginPartial")
+
+			</div>
+		</div>
+	</nav>
+
+	<div class="container body-content">
+		<div class="row">
+			@RenderBody()
+		</div>
+	</div>
+
+	<footer>
+		<nav>
+
+			<a asp-controller="Feedback" asp-action="Index">Feedback</a>&nbsp; &nbsp; &nbsp;
+			<a asp-controller="Payment" asp-action="MakePayment">Make a payment</a>
+
+		</nav>
+		Copyright &copy; Natnael Tebeje. All rights reserved.
+		
+	</footer>
+
+</body>
+</html>
